@@ -13,10 +13,24 @@ function Callback() {
     if (stateParam) setState(stateParam);
   }, []);
 
+  const getToken = async () => {
+    const response = await fetch('http://localhost:4500/api/test', {
+      method: 'POST',
+      body: JSON.stringify({
+        code: code,
+        state: state
+      })
+    })
+    const responseJson = await response.json();
+    console.info(responseJson);
+  }
+
   return (
     <div>
       code: {code}
       state: {state}
+      <br />
+      <span onClick={getToken}>Show in console</span>
     </div>
   );
 }
