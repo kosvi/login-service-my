@@ -26,7 +26,7 @@ const app = (request: IncomingMessage, response: ServerResponse): void => {
         const codeResponse = await axios.post('http://localhost:3001/token', JSON.stringify({
             grant_type: 'authorization_code',
             code: code,
-            client_id: '87aff961-3b64-4089-997c-9a4d889d8114&',
+            client_id: '87aff961-3b64-4089-997c-9a4d889d8114',
             code_verifier: 'MkAVLwa0SWfmWIwAhwHUeQY0R5aMmMUN3aP_yz-EZNk',
             redirect_uri: 'http%3A%2F%2Flocalhost%3A5000%2Fcallback'
         }), {
